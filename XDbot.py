@@ -17,14 +17,6 @@ async def on_message(message):
 
 
 
- @client.event
- asinc def UpdatePresence():
-
-    DiscordRichPresence discordPresence:
-    memset(&discordPresence, 0, sizeof(discordPresence)):
-    discordPresence.state = "Pon XDhelp para saber mas comandos"
-    discordPresence.partyId = "ae488379-351d-4a4f-ad32-2b9b01c91657"
-    discordPresence.joinSecret = "MTI4NzM0OjFpMmhuZToxMjMxMjM= "
-    Discord_UpdatePresence(&discordPresence)       
+ 
 
 client.run('NzcwNDM0OTA2NTkyNjQxMDU1.X5dhaw.n_q183owVdRSF-hzpdoqMNWGW2Q')
