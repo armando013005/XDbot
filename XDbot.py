@@ -12,11 +12,6 @@ async def on_message(message):
         return
 
     if message.content.startswith('XDhelp'):
-        await message.channel.send('Hola, estoy en construccion -XD')
+        await message.channel.send('Hello!')
 
-
-
-
- 
-
-client.run('NzcwNDM0OTA2NTkyNjQxMDU1.X5dhaw.n_q183owVdRSF-hzpdoqMNWGW2Q')
+client.run('NzcwNDM0OTA2NTkyNjQxMDU1.X5dhaw.wrBkgqGhkWjJZUSB-TfJIs0Ccs4')
