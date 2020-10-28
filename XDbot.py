@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix='XD')
+bot = commands.Bot(command_prefix='*')
 client = discord.Client()
 
 
