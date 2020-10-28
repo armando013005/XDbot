@@ -11,8 +11,8 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
 @bot.command()
-async def ayuda(ctx, ayuda):
-    await ctx.send("Hola, todavia no me asignan comandos")
+async def test(ctx, *, arg):
+    await ctx.send(arg)
 
 @bot.command()
 async def suma(ctx, a: int, b: int):
