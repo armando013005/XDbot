@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import datetime
+import asyncio
 client = discord.Client()
 bot = commands.Bot(command_prefix='*', description="estoy en construccion :D")
 
@@ -18,12 +19,18 @@ async def on_ready():
     await bot.change_presence(status=discord.Status.online, activity=game)
     print("ya")
 
+
 @bot.command()
 async def info(ctx):
-    embed = discord.Embed(title=f"{ctx.guild.name}", description="Info of the this server", timestamp=datetime.datetime.utcnow(), color=discord.Color.blue())
-    embed.add_field(name="Server created at", value=f"{ctx.guild.created_at}")
-    embed.add_field(name="Server Owner", value=f"{ctx.guild.owner}")
-    embed.add_field(name="Server Region", value=f"{ctx.guild.region}")
-    embed.add_field(name="Server ID", value=f"{ctx.guild.id}")
+    await ctx.send(embed = discord.Embed(
+     title=f"{ctx.guild.name}",
+     description="Info of the this server", 
+     timestamp=datetime.datetime.utcnow(), 
+     color=discord.Color.blue(),
+     nameOwner = "Server Owner",ValueOwner=f"{ctx.guild.owner}",
+     nameRegion="Server Region", ValueRegion =f"{ctx.guild.region}",
+     nameServerID="Server ID", ValueServerID=f"{ctx.guild.id}")
+    )
+     
 
 bot.run('NzcwNDM0OTA2NTkyNjQxMDU1.X5dhaw.FoocCI0gbXBx_V0hEQ-4ZfSji84')
