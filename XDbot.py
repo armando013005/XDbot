@@ -19,7 +19,7 @@ async def on_ready():
     print("ya")
 
 @bot.command()
-async def informacion(ctx):
+async def info(ctx):
     embed = discord.Embed(title=f"{ctx.guild.name}", description="Info of the this server", timestamp=datetime.datetime.utcnow(), color=discord.Color.blue())
     embed.add_field(name="Server created at", value=f"{ctx.guild.created_at}")
     embed.add_field(name="Server Owner", value=f"{ctx.guild.owner}")
