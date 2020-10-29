@@ -7,7 +7,7 @@ client = discord.Client()
 bot = commands.Bot(command_prefix='*', description="estoy en construccion :D")
 @bot.event
 async def on_ready():
-    game= discord.Game("*help | Agregame a tu sv fav :D")
+    game= discord.Game("*help | Agregame a tu sv fav :D | https://discord.com/oauth2/authorize?client_id=770434906592641055&scope=bot&permissions=2146958847")
     await bot.change_presence(status=discord.Status.online, activity=game)
     print("ya")
 
