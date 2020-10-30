@@ -25,6 +25,7 @@ async def Help(ctx):
 
 
 
+
 @bot.command()
 async def QueHace(ctx, *, member: discord.Member, BaseActivity: discord.Activity):
     await ctx.send('{0.mention} esta jugando {0.BaseActivity}'.format(member))
