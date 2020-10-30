@@ -23,13 +23,15 @@ async def Help(ctx):
     await ctx.send(embed=embed)
     pass
 
-@bot.command()
-async def QueHace(ctx, *, member: discord.Member, BaseActivity: discord.Activity):
-    await ctx.send('{0} esta jugando {0.BaseActivity}'.format(member))
+
 
 @bot.command()
-async def join(ctx, *, member: discord.Member):
-    await ctx.send('@{0} se unio el {0.joined_at} al servidor 'f"{ctx.guild.name}".format(member))
+async def QueHace(ctx, *, member: discord.Member, BaseActivity: discord.Activity):
+    await ctx.send('{0.mention} esta jugando {0.BaseActivity}'.format(member))
+
+@bot.command()
+async def join(ctx, *, autor: discord.Member):
+    await ctx.send('{0.mention} se unio el {0.joined_at} al servidor 'f"{ctx.guild.name}".format(autor))
 
 @bot.command()
 async def ping(ctx, description= "pong!!"):
