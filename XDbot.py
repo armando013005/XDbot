@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import datetime
-import discord.activity
+from discord.embeds import EmbedProxy
 
 client = discord.Client()
 bot = commands.Bot(command_prefix='XD', description="estoy en construccion :D")
@@ -14,21 +14,22 @@ async def on_ready():
 @bot.command()
 async def Help(ctx):
     embed = discord.Embed(title=f"{ctx.guild.name}", description="Info del comando ayuda :D", timestamp=datetime.datetime.utcnow(), color=discord.Color.gold())
-    embed.add_field(name="XDHelp", value="Da este comando")
-    embed.add_field(name="XDpong", value="Dice ping¡¡")
-    embed.add_field(name="XDjoin", value="Dice cuando se unio el usuario")
-    embed.add_field(name="XDsuma", value="Es una calculadora de suma xd")
-    embed.add_field(name="XDinfo", value="Da la informacion del servidor actual")
-    embed.add_field(name="XDQueHace", value="Da la actividad del usuario (en construccion)")
+    embed.add_field(name="XDHelp", value="Da este comando", inline=True)
+    embed.add_field(name="XDpong", value="Dice ping¡¡",inline=True)
+    embed.add_field(name="XDjoin", value="Dice cuando se unio el usuario",inline=True)
+    embed.add_field(name="XDsuma", value="Es una calculadora de suma xd",inline=True)
+    embed.add_field(name="XDinfo", value="Da la informacion del servidor actual",inline=True)
+    embed.add_field(name="XDavatar", value="Avatar del usuario",inline=True)
     await ctx.send(embed=embed)
     pass
 
 
-
-
 @bot.command()
-async def QueHace(ctx, *, member: discord.Member, BaseActivity: discord.Activity):
-    await ctx.send('{0.mention} esta jugando {0.BaseActivity}'.format(member))
+async def avatar(ctx,*, autor: discord.User):
+    embed = discord.Embed(title="avatar", description="Avatar de {0.mention}".format(autor.activities),)
+    embed.set_image(url= "{}".format(autor.avatar_url))
+    await ctx.send(embed=embed)
+
 
 @bot.command()
 async def join(ctx, *, autor: discord.Member):
