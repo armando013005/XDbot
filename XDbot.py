@@ -15,13 +15,12 @@ async def ayuda(ctx):
     embed = discord.Embed(title=f"{ctx.guild.name}", description="Info del comando ayuda :D", timestamp=datetime.datetime.utcnow(), color=discord.Color.gold())
     embed.add_field(name="XDayuda", value="Muestra este comando", inline=True)
     embed.add_field(name="XDpong", value="Dice ping¡¡",inline=True)
-    embed.add_field(name="XDjoin", value="Dice cuando se unio el usuario",inline=True)
-    embed.add_field(name="XDsuma", value="Es una calculadora de suma xd",inline=True)
+    embed.add_field(name="XDjoin<nombre de la persona, etiquetada>", value="Dice cuando se unio el usuario",inline=True)
+    embed.add_field(name="XDsuma<>", value="Es una calculadora de suma xd",inline=True)
     embed.add_field(name="XDinfo", value="Muestra la informacion del servidor actual",inline=True)
-    embed.add_field(name="XDavatar", value="Muestra el avatar del usuario",inline=True)
+    embed.add_field(name="XDavatar<nombre de la persona, etiquetada>", value="Muestra el avatar del usuario",inline=True)
     embed.add_field(name="XDagregar", value="Link para agregarme a tu server favorito",inline=True)
     await ctx.send(embed=embed)
-
 
 @bot.event
 async def on_member_join(member):
