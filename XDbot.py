@@ -2,34 +2,44 @@ import discord
 from discord.ext import commands
 import datetime
 from discord.embeds import EmbedProxy
-
-client = discord.Client()
-bot = commands.Bot(command_prefix='XD', description="estoy en construccion :D")
+import random
+bot = commands.Bot(command_prefix='XD')
 @bot.event
 async def on_ready():
-    game= discord.Game("XDHelp | Agregame a tu sv fav :D |")
+    game= discord.Game("XDayuda | Agregame a tu sv fav :D |")
     await bot.change_presence(status=discord.Status.online, activity=game)
     print("ya")
 
 @bot.command()
-async def Help(ctx):
+async def ayuda(ctx):
     embed = discord.Embed(title=f"{ctx.guild.name}", description="Info del comando ayuda :D", timestamp=datetime.datetime.utcnow(), color=discord.Color.gold())
-    embed.add_field(name="XDHelp", value="Da este comando", inline=True)
+    embed.add_field(name="XDayuda", value="Muestra este comando", inline=True)
     embed.add_field(name="XDpong", value="Dice ping¡¡",inline=True)
     embed.add_field(name="XDjoin", value="Dice cuando se unio el usuario",inline=True)
     embed.add_field(name="XDsuma", value="Es una calculadora de suma xd",inline=True)
-    embed.add_field(name="XDinfo", value="Da la informacion del servidor actual",inline=True)
-    embed.add_field(name="XDavatar", value="Avatar del usuario",inline=True)
+    embed.add_field(name="XDinfo", value="Muestra la informacion del servidor actual",inline=True)
+    embed.add_field(name="XDavatar", value="Muestra el avatar del usuario",inline=True)
+    embed.add_field(name="XDagregar", value="Link para agregarme a tu server favorito",inline=True)
     await ctx.send(embed=embed)
-    pass
 
+
+@bot.event
+async def on_member_join(member):
+    for channel in member.guild.channels:
+        if str(channel) == "general":
+            await channel.send_message(f"""{member.mention}Bienvenido :D""")
 
 @bot.command()
 async def avatar(ctx,*, autor: discord.User):
-    embed = discord.Embed(title="avatar", description="Avatar de {0.mention}".format(autor.activities),)
+    embed = discord.Embed(title="avatar", description="Avatar de {0.mention}".format(autor.activities),color=discord.Color.from_rgb(random.randint(0,255),random.randint(0,255),random.randint(0,255)))
     embed.set_image(url= "{}".format(autor.avatar_url))
     await ctx.send(embed=embed)
 
+@bot.command()
+async def agregar(ctx):
+    embed = discord.Embed(title="Este es el link para agregarme a tu server fav :D", color=discord.Color.from_rgb(random.randint(0,255),random.randint(0,255),random.randint(0,255)))
+    embed.add_field(name="aqui",value="https://discord.com/oauth2/authorize?client_id=770434906592641055&scope=bot&permissions=2146958847")
+    await ctx.send(embed=embed)
 
 @bot.command()
 async def join(ctx, *, autor: discord.Member):
