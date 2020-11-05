@@ -13,7 +13,7 @@ async def on_ready():
 @bot.command()
 async def ayuda(ctx):
     embed = discord.Embed(title=f"{ctx.guild.name}", description="Info del comando ayuda :D", timestamp=datetime.datetime.utcnow(), color=discord.Color.gold())
-    embed.add_field(name="XDayuda", value="Muestra este comando", inline=True)
+    embed.add_field(name="XDayuda", value="Muestra este comando",inline=False)
     embed.add_field(name="XDpong", value="Dice ping¡¡",inline=True)
     embed.add_field(name="XDjoin<nombre de la persona, etiquetada>", value="Dice cuando se unio el usuario",inline=True)
     embed.add_field(name="XDsuma", value="Es una calculadora de suma xd, ejem: 10 10, el bot dira: 20 ",inline=True)
