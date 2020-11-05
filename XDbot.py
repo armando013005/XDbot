@@ -22,6 +22,7 @@ async def ayuda(ctx):
     embed.add_field(name="XDagregar", value="Link para agregarme a tu server favorito",inline=True)
     await ctx.send(embed=embed)
 
+
 @bot.event
 async def on_member_join(member):
     for channel in member.guild.channels:
