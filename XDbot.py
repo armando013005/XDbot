@@ -3,7 +3,9 @@ from discord.ext import commands
 import datetime
 from discord.embeds import EmbedProxy
 import random
-bot = commands.Bot(command_prefix='XD')
+
+bot = commands.Bot(command_prefix='XD',)
+
 @bot.event
 async def on_ready():
     game= discord.Game("XDayuda | Agregame a tu sv fav :D |")
@@ -22,12 +24,6 @@ async def ayuda(ctx):
     embed.add_field(name="XDagregar", value="Link para agregarme a tu server favorito",inline=True)
     await ctx.send(embed=embed)
 
-
-@bot.event
-async def on_member_join(member):
-    for channel in member.guild.channels:
-        if str(channel) == "general":
-            await channel.send_message(f"""{member.mention}Bienvenido :D""")
 
 @bot.command()
 async def avatar(ctx,*, autor: discord.User):
