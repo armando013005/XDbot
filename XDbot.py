@@ -4,7 +4,9 @@ import datetime
 from discord.embeds import EmbedProxy
 import random
 
-bot = commands.Bot(command_prefix='XD',)
+bot = commands.Bot(command_prefix='XD')
+
+@bot.help_command(None)    
 
 @bot.event
 async def on_ready():
@@ -13,7 +15,7 @@ async def on_ready():
     print("ya")
 
 @bot.command()
-async def ayuda(ctx):
+async def help(ctx):
     embed = discord.Embed(title=f"{ctx.guild.name}", description="Info del comando ayuda :D", timestamp=datetime.datetime.utcnow(), color=discord.Color.gold(), inline= True)
     embed.add_field(name="XDayuda", value="Muestra este comando",inline=True)
     embed.add_field(name="XDpong", value="Dice ping¡¡",inline=True)
