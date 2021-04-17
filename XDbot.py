@@ -60,4 +60,4 @@ async def info(ctx):
     embed.add_field(name="Server ID", value=f"{ctx.guild.id}")
     await ctx.send(embed=embed)
 
-bot.run('NzcwNDM0OTA2NTkyNjQxMDU1.X5dhaw.FoocCI0gbXBx_V0hEQ-4ZfSji84')
+bot.run("PON TU TOKEN AQUI")
